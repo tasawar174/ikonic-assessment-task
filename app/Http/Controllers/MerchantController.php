@@ -35,7 +35,7 @@ class MerchantController extends Controller
         $revenue = $orders->sum('subtotal');
         $data = [
             'count' => $orderCount,
-            'commissions_owed' => number_format($commissionOwed, 2),
+            'commissions_owed' => round($commissionOwed, 2),
             'revenue' => $revenue,
         ];
         return response()->json($data);
